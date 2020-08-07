@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Payment Rates</title>
+</head>
+<body>
+    {% for amt in amount %}
+		<p><h4>Hey, {{amt.customer_name}} here's your data.</h4></p>
+		Date: {{amt.date}}</br>
+		1). 20/{{amt.bid_month}} =  {{amt.total_chit_amount}}/{{amt.total_commission_amount}} = {{amt.amount_to_pay}}/-</br>
+        commission = {{amt.commission_amount}}/-</br>
+		Total :- {{amt.total_amount_to_pay}}/-</br>
+	{% endfor %}
+</body>
+</html>

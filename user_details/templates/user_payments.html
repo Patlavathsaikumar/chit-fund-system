@@ -1,0 +1,150 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Payment Rates</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'images/icons_rates_table/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_rates_table/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_rates_table/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_rates_table/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_rates_table/perfect-scrollbar/perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util_rates_table.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main_rates_table.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						{% csrf_token %}
+						<thead>
+							<tr class="table100-head">
+								<th class="column3" align="center">month</th>
+								<th class="column3" align="center">status</th>
+							</tr>
+						</thead>
+						{% for payment in payments %}
+						<div>
+							<p><h4>Hey, {{payment.customer_name}} here's your data.</h4></p>
+							<p><h7>NOTE:  status= 'True' indicates 'PAID' & status= 'False' indicates 'UNPAID'</h7></p></br>	
+						</div>
+						<tbody>
+							<tr>
+								<td class="column3" align="center">May_05_2019</td>
+								<td class="column3" align="center">{{payment.May_05_2019}}</td>
+							</tr>
+							<tr>
+                                <td class="column3" align="center">June_05_2019</td>
+								<td class="column3" align="center">{{payment.June_05_2019}}</td>
+							</tr>
+							<tr>
+								<td class="column3" align="center">July_05_2019</td>
+								<td class="column3" align="center">{{payment.July_05_2019}}</td>
+							</tr>
+							<tr>
+								<td class="column3" align="center">August_05_2019</td>
+								<td class="column3" align="center">{{payment.August_05_2019}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">September_05_2019</td>
+								<td class="column3" align="center">{{payment.September_05_2019}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">October_05_2019</td>
+								<td class="column3" align="center">{{payment.October_05_2019}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">November_05_2019</td>
+								<td class="column3" align="center">{{payment.November_05_2019}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">December_05_2019</td>
+								<td class="column3" align="center">{{payment.December_05_2019}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">January_05_2020</td>
+								<td class="column3" align="center">{{payment.January_05_2020}}</td>
+							</tr>
+							<tr>
+								<td class="column3" align="center">February_05_2020</td>
+								<td class="column3" align="center">{{payment.February_05_2020}}</td>
+							</tr>
+							<tr>
+								<td class="column3" align="center">March_05_2020</td>
+								<td class="column3" align="center">{{payment.March_05_2020}}</td>
+							</tr>
+							<tr>
+								<td class="column3" align="center">April_05_2020</td>
+								<td class="column3" align="center">{{payment.April_05_2020}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">May_05_2020</td>
+								<td class="column3" align="center">{{payment.May_05_2020}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">June_05_2020</td>
+								<td class="column3" align="center">{{payment.June_05_2020}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">July_05_2020</td>
+								<td class="column3" align="center">{{payment.July_05_2020}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">August_05_2020</td>
+								<td class="column3" align="center">{{payment.August_05_2020}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">September_05_2020</td>
+								<td class="column3" align="center">{{payment.September_05_2020}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">October_05_2020</td>
+								<td class="column3" align="center">{{payment.October_05_2020}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">November_05_2020</td>
+								<td class="column3" align="center">{{payment.November_05_2020}}</td>
+							</tr>
+							<tr>	
+								<td class="column3" align="center">December_05_2020</td>
+								<td class="column3" align="center">{{payment.December_05_2020}}</td>
+							</tr>
+						</tbody>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+<!--===============================================================================================-->	
+	<script src="{% static 'vendor_rates_table/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor_rates_table/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor_rates_table/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor_rates_table/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main_rates_table.js' %}"></script>
+
+</body>
+</html>

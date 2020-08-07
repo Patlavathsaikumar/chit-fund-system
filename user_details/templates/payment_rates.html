@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Payment Rates</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'images/icons_rates_table/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_rates_table/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_rates_table/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_rates_table/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_rates_table/perfect-scrollbar/perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util_rates_table.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main_rates_table.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						{% csrf_token %}
+						<thead>
+							<tr class="table100-head">
+								<th class="column1" align="center">id</th>
+								<th class="column2" align="center">Month</th>
+								<th class="column3" align="center">Total_Amount</th>
+								<th class="column4" align="center">Chit_Draw_Amount</th>
+								<th class="column5" align="center">Amount_to_Pay</th>
+								<th class="column6" align="center">Comission_Amount</th>
+							</tr>
+						</thead>
+						{% for rate in rates %}
+						<tbody>
+							<tr>
+								<td class="column1" align="center">{{rate.id}}</td>
+								<td class="column2" align="center">{{rate.month}}</td>
+								<td class="column3" align="center">{{rate.total_amount}}</td>
+								<td class="column4" align="center">{{rate.chit_draw_amount}}</td>
+								<td class="column5" align="center">{{rate.amount_to_pay}}</td>
+								<td class="column6" align="center">{{rate.commission_amount}}</td>
+							</tr>
+						</tbody>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+<!--===============================================================================================-->	
+	<script src="{% static 'vendor_rates_table/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor_rates_table/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor_rates_table/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor_rates_table/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main_rates_table.js' %}"></script>
+
+</body>
+</html>
